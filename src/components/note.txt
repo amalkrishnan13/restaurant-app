@@ -1,0 +1,103 @@
+api call in js
+--------------
+AJAX
+-XMLhttp
+-fetch
+-asynch await
+
+useEffect is the hook used instead of ngoninit
+
+
+redirection in react
+--------------------
+
+react-router-dom          npm i react-router-dom
+
+
+import{
+    BrowserRouter as Router  - all roting need components
+    Routes                   - to set paths for each components
+    Route                    - more than one path
+}
+
+
+useParams  - hook used to access params from component url
+
+
+REDUX
+------
+coupling  -- many connections between parent and child component
+
+props drilling-- in coupling if any intermediaate component have any errors,
+                 all other childs will not work.
+
+    to avoid props drilling we need to reduce coupling and make all the component independent
+
+    for this react introduce a new technology - state management technology - REDUX
+
+
+
+redux process
+--------------
+
+create a new js file to keep the states , all the components can access the js file
+
+
+- the components only can access the datas from js file . but they cant update datas in js file
+
+
+          Reducer   ------------------------------->   Data.js +
+             | 
+                                                       state
+             ^                                            |
+                                                          |
+             ^  response as payload                       |
+                                                          |
+             ^                                            |
+                                                          |
+                                                          |
+             ^                                             
+         Action < -------------------------------   component     
+        logic             dispatch
+
+
+Action - a file with all the logics to update the state
+Dispatch - method used to dispatch the logic in action file when the component need state updation
+Reducer - update the dtatas in js file according to the payload response get action file
+
+
+libraries to apply redux
+------------------------
+
+1.REDUX
+2.REACT-REDUX
+3.REDUX-THUNK
+
+npm i redux react-redux redux-thunk
+
+createStore() - method in REDUX used to craete store in js file
+              - 2 argunemts
+              - 1. reducer  
+              - 2. middleware  - used to make synchronous redux into asynchronous
+
+applyMiddleware() - method in REDUX to apply middleware
+
+combineReducers() - method in REDUX used to combine all reducers in js file
+
+
+thunk  - in REDUX-THUNK  - used to create middleware
+
+
+1. create store
+2. apply the store in index.js
+
+
+AXIOS   -- module used to make http methods {api call}  -- npm i axios
+
+useDispatch - hook used to dispatch actions in components  - react-redux
+
+
+
+To access datas from store to components  - useSelector  - hook
+
+
